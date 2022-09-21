@@ -1,10 +1,11 @@
 
 from sqlalchemy import create_engine
 from sqlalchemy.orm import declarative_base, sessionmaker
+import os
 
 
 engine = create_engine(
-    'postgresql://postgres:postgres@localhost:5432/pizza_delivery',
+    os.getenv("DATABASE_URL"),
     echo=True
 )
 
